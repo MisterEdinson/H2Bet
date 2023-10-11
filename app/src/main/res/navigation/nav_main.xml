@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.h2bet.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_spinFragment"
+            app:destination="@id/spinFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_ticTacFragment"
+            app:destination="@id/ticTacFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_minesFragment"
+            app:destination="@id/minesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sportFragment"
+            app:destination="@id/sportFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spinFragment"
+        android:name="com.example.h2bet.ui.game.spin.SpinFragment"
+        android:label="fragment_spin"
+        tools:layout="@layout/fragment_spin" >
+        <action
+            android:id="@+id/action_spinFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/minesFragment"
+        android:name="com.example.h2bet.ui.game.mines.MinesFragment"
+        android:label="fragment_mines"
+        tools:layout="@layout/fragment_mines" >
+        <action
+            android:id="@+id/action_minesFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticTacFragment"
+        android:name="com.example.h2bet.ui.game.tic_tac.TicTacFragment"
+        android:label="fragment_tic_tac"
+        tools:layout="@layout/fragment_tic_tac" >
+        <action
+            android:id="@+id/action_ticTacFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.h2bet.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/sportFragment"
+        android:name="com.example.h2bet.ui.sport.SportFragment"
+        android:label="fragment_sport"
+        tools:layout="@layout/fragment_sport" >
+        <action
+            android:id="@+id/action_sportFragment_to_sportLigaFragment"
+            app:destination="@id/sportLigaFragment" />
+        <action
+            android:id="@+id/action_sportFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sportLigaFragment"
+        android:name="com.example.h2bet.ui.sport.liga.SportLigaFragment"
+        android:label="fragment_sport_liga"
+        tools:layout="@layout/fragment_sport_liga" >
+        <action
+            android:id="@+id/action_sportLigaFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+</navigation>
