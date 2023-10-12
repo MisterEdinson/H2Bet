@@ -6,4 +6,6 @@
     <string name="games">Games</string>
     <string name="again">AGAIN</string>
     <string name="tic_tac_toe">Tic Tac Toe</string>
+    <string name="mi_mines">Mi Mines</string>
+    <string name="score_250">Score: 250</string>
 </resources>
