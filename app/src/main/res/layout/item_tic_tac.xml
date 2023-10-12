@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#180D20">
+
+    <ImageView
+        android:id="@+id/lineTicTac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/list_tic_toc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/itemTic1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tac"
+        app:layout_constraintBottom_toTopOf="@+id/itemTic4"
+        app:layout_constraintEnd_toStartOf="@+id/itemTic2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/lineTicTac"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/itemTic2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/toc"
+        app:layout_constraintBottom_toBottomOf="@+id/itemTic1"
+        app:layout_constraintEnd_toStartOf="@+id/itemTic3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemTic1"
+        app:layout_constraintTop_toTopOf="@+id/itemTic1" />
+
+    <View
+        android:id="@+id/itemTic3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemTic2"
+        app:layout_constraintEnd_toEndOf="@+id/lineTicTac"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemTic2"
+        app:layout_constraintTop_toTopOf="@+id/lineTicTac" />
+
+    <View
+        android:id="@+id/itemTic4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/itemTic7"
+        app:layout_constraintEnd_toStartOf="@+id/itemTic5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/lineTicTac"
+        app:layout_constraintTop_toBottomOf="@+id/itemTic1" />
+
+    <View
+        android:id="@+id/itemTic5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemTic4"
+        app:layout_constraintEnd_toStartOf="@+id/itemTic6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemTic4"
+        app:layout_constraintTop_toTopOf="@+id/itemTic4" />
+
+    <View
+        android:id="@+id/itemTic6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemTic5"
+        app:layout_constraintEnd_toEndOf="@+id/lineTicTac"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemTic5"
+        app:layout_constraintTop_toTopOf="@+id/itemTic5" />
+
+    <View
+        android:id="@+id/itemTic7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lineTicTac"
+        app:layout_constraintEnd_toStartOf="@+id/itemTic8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/itemTic4"
+        app:layout_constraintTop_toBottomOf="@+id/itemTic4" />
+
+    <View
+        android:id="@+id/itemTic8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemTic7"
+        app:layout_constraintEnd_toStartOf="@+id/itemTic9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemTic7"
+        app:layout_constraintTop_toTopOf="@+id/itemTic7"
+        app:layout_constraintVertical_bias="0.866" />
+
+    <View
+        android:id="@+id/itemTic9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemTic8"
+        app:layout_constraintEnd_toEndOf="@+id/lineTicTac"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemTic8"
+        app:layout_constraintTop_toTopOf="@+id/itemTic8"
+        app:layout_constraintVertical_bias="0.733" />
+</androidx.constraintlayout.widget.ConstraintLayout>
