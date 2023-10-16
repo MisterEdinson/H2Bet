@@ -14,7 +14,7 @@ import com.example.h2bet.ui.SharedViewModel
 class MinesFragment : Fragment() {
 
     private lateinit var binding: FragmentMinesBinding
-    private var viewModel = activityViewModels<SharedViewModel>()
+    private val viewModel: SharedViewModel by activityViewModels()
     private var gameData = RandomGame()
     private lateinit var adapter: MinesAdapter
 
@@ -31,6 +31,10 @@ class MinesFragment : Fragment() {
         initAdapter()
         gameData.dataInit()
         adapter.list.submitList(gameData.randomData)
+
+        viewModel.openSettings.observe(viewLifecycleOwner){
+            if (it) findNavController().navigate(R.id.action_minesFragment_to_settingsFragment)
+        }
 
         binding.apply {
             btnReturn.setOnClickListener { findNavController().popBackStack() }
