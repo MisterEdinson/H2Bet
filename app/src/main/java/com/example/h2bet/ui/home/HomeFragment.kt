@@ -5,13 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
 import com.example.h2bet.databinding.FragmentHomeBinding
+import com.example.h2bet.ui.SharedViewModel
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
+    private val viewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +26,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.openSettings.observe(viewLifecycleOwner){
+            if (it) findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
+        }
 
         binding.apply {
             btnGames.setOnClickListener { }

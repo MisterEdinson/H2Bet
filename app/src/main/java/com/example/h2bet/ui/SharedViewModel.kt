@@ -7,6 +7,7 @@ class SharedViewModel: ViewModel() {
     var openSettings : MutableLiveData<Boolean> = MutableLiveData(false)
 
     fun changeOpenSettings(){
-        openSettings.value = openSettings.value == false
+        openSettings.value = true
+        openSettings.value = false
     }
 }

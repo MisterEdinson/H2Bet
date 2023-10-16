@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
             btnSettings.setOnClickListener {
-                Toast.makeText(binding.root.context, "Click", Toast.LENGTH_SHORT).show()
+                viewModel.changeOpenSettings()
             }
         }
     }
