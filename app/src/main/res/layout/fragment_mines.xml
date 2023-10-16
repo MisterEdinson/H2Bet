@@ -51,11 +51,12 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="10dp"
+        app:spanCount="5"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvScore"
-        tools:itemCount="3"
+        tools:itemCount="27"
         tools:listitem="@layout/item_mines" />
 
     <TextView
