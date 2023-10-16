@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
+        android:name=".di.HiltApp"
         android:theme="@style/Theme.H2Bet"
         tools:targetApi="33">
         <activity

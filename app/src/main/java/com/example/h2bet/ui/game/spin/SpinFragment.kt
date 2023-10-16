@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
 import com.example.h2bet.databinding.FragmentSpinBinding
 import com.example.h2bet.utils.animate.Rotate
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SpinFragment : Fragment() {
 
     private lateinit var binding: FragmentSpinBinding

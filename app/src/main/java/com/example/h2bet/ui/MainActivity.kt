@@ -6,7 +6,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
 import com.example.h2bet.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

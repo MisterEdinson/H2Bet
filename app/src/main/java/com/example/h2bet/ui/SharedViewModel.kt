@@ -2,8 +2,12 @@ package com.example.h2bet.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.h2bet.domain.Repository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class SharedViewModel: ViewModel() {
+@HiltViewModel
+class SharedViewModel @Inject constructor(repo: Repository): ViewModel() {
     var openSettings : MutableLiveData<Boolean> = MutableLiveData(false)
 
     fun changeOpenSettings(){
