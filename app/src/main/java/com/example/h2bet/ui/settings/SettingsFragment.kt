@@ -8,17 +8,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
+import com.example.h2bet.databinding.FragmentSettingsBinding
 import com.example.h2bet.ui.SharedViewModel
 
 class SettingsFragment : Fragment() {
 
     private val viewModel: SharedViewModel by activityViewModels()
+    private lateinit var binding: FragmentSettingsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+    ): View {
+        binding = FragmentSettingsBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -26,6 +29,12 @@ class SettingsFragment : Fragment() {
 
         viewModel.openSettings.observe(viewLifecycleOwner){
             if (it) findNavController().popBackStack()
+        }
+
+        binding.apply {
+            btnReturn.setOnClickListener { findNavController().popBackStack() }
+            incOdds.ltOddsContainer.setOnClickListener {  }
+            incTime.ltTimeContainer.setOnClickListener {  }
         }
     }
 }
