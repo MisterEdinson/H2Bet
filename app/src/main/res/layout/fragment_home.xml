@@ -9,7 +9,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/btnGames"
+        android:id="@+id/btnGamesHome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -22,13 +22,13 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/btnSport"
+        app:layout_constraintEnd_toStartOf="@+id/btnSportHome"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/btnSport"
+        android:id="@+id/btnSportHome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -42,8 +42,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnGames"
-        app:layout_constraintTop_toTopOf="@+id/btnGames" />
+        app:layout_constraintStart_toEndOf="@+id/btnGamesHome"
+        app:layout_constraintTop_toTopOf="@+id/btnGamesHome" />
 
     <ImageView
         android:id="@+id/btnGameSpin"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btnGameTicToc"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGames" />
+        app:layout_constraintTop_toBottomOf="@+id/btnGamesHome" />
 
     <ImageView
         android:id="@+id/btnGameTicToc"

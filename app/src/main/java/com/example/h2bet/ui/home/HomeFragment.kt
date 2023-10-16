@@ -32,8 +32,8 @@ class HomeFragment : Fragment() {
         }
 
         binding.apply {
-            btnGames.setOnClickListener { }
-            btnSport.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_sportFragment) }
+            btnGamesHome.setOnClickListener { }
+            btnSportHome.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_sportFragment) }
             btnGameSpin.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_spinFragment) }
             btnGameMines.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_minesFragment) }
             btnGameTicToc.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_ticTacFragment) }
