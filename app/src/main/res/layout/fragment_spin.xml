@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:paddingVertical="20dp"
         android:paddingHorizontal="12dp"
-
         android:src="@drawable/ic_return"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -67,13 +66,12 @@
 
     <ImageView
         android:id="@+id/imgFortune"
-        android:layout_width="wrap_content"
+        android:layout_width="700dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
         android:src="@drawable/spin_fortune"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgMarker" />
 

@@ -5,14 +5,52 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
+import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
+import com.example.h2bet.databinding.FragmentSpinBinding
+import com.example.h2bet.utils.animate.Rotate
 
 class SpinFragment : Fragment() {
+
+    private lateinit var binding: FragmentSpinBinding
+    private var win : MutableLiveData<Int> = MutableLiveData(0)
+    private var blockBtnSpin: Boolean = false
+    private var winResult: Float = 0.0F
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_spin, container, false)
+    ): View {
+        binding = FragmentSpinBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            btnSpin.setOnClickListener {
+                if (!blockBtnSpin) startAnimation(imgFortune)
+            }
+
+            btnReturn.setOnClickListener { findNavController().popBackStack() }
+        }
+    }
+
+    private fun startAnimation(view: View) {
+        blockBtnSpin = true
+        Rotate({ start -> startAnimate(blockBtnSpin)},{ end -> endAnimate(end)}).rotateWheel(view)
+    }
+
+    private fun startAnimate(block: Boolean){
+        blockBtnSpin = block
+    }
+
+    private fun endAnimate(result:Float){
+        blockBtnSpin = false
+        Toast.makeText(context, result.toString(), Toast.LENGTH_SHORT).show()
+        //win.value = RandomWin().math(rate.value!!)
     }
 }
