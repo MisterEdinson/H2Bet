@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
 import com.example.h2bet.databinding.FragmentHomeBinding
 import com.example.h2bet.ui.SharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding

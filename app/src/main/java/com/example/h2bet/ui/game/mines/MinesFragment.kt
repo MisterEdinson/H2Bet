@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
 import com.example.h2bet.databinding.FragmentMinesBinding
 import com.example.h2bet.ui.SharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MinesFragment : Fragment() {
 
     private lateinit var binding: FragmentMinesBinding

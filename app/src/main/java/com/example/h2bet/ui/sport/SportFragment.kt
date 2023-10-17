@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
 import com.example.h2bet.databinding.FragmentSportBinding
 import com.example.h2bet.ui.SharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SportFragment : Fragment() {
 
     private lateinit var binding: FragmentSportBinding
