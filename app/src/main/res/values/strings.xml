@@ -8,4 +8,11 @@
     <string name="tic_tac_toe">Tic Tac Toe</string>
     <string name="mi_mines">Mi Mines</string>
     <string name="score_250">Score: 250</string>
+    <string name="_5">5</string>
+    <string name="campeonato_brasileiro_s_rie_a">CAMPEONATO BRASILEIRO. SÉRIE A</string>
+    <string name="settings">Settings</string>
+    <string name="decimal">Decimal</string>
+    <string name="odds_format">Odds Format</string>
+    <string name="time_format">Time Format</string>
+    <string name="_24h">24h</string>
 </resources>
