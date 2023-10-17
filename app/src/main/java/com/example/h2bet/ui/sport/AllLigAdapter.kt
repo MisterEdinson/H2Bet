@@ -10,7 +10,7 @@ import com.example.h2bet.R
 import com.example.h2bet.data.network.models.ligs.ValueItem
 import com.example.h2bet.databinding.ItemLeagueBinding
 
-class AllLigAdapter: RecyclerView.Adapter<AllLigAdapter.LigHolder>() {
+class AllLigAdapter(private val navigate: (Int) -> Unit): RecyclerView.Adapter<AllLigAdapter.LigHolder>() {
     class LigHolder(view: View): RecyclerView.ViewHolder(view)
 
     private var callback = object: DiffUtil.ItemCallback<ValueItem>(){
@@ -42,5 +42,6 @@ class AllLigAdapter: RecyclerView.Adapter<AllLigAdapter.LigHolder>() {
             tvLeagueName.text = item.lE
             tvLeagueCountGame.text = item.gC.toString()
         }
+        item.lI?.let { binding.imgLeagueDetails.setOnClickListener { navigate(item.lI) } }
     }
 }
