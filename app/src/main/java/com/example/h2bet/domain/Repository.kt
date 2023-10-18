@@ -1,4 +1,19 @@
 package com.example.h2bet.domain
 
-class Repository {
+import android.util.Log
+import com.example.h2bet.data.network.SimpleRetrofit
+import com.example.h2bet.data.network.models.ligs.ValueItem
+import javax.inject.Inject
+
+class Repository @Inject constructor(private val retro: SimpleRetrofit) {
+    suspend fun getAllLig() : List<ValueItem?>?{
+        Log.d("http-logging", "response need")
+        val response = retro.getAllLig().value
+        Log.d("http-logging", response.toString())
+        return response
+    }
+
+    suspend fun getSelectLig(){
+
+    }
 }
