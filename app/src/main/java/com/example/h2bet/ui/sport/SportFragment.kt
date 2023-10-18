@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -34,7 +35,6 @@ class SportFragment : Fragment() {
 
         initAdapter()
         viewModel.allLigData.observe(viewLifecycleOwner){
-            Log.d("http-logging-response", it.toString())
             adapterLig?.list?.submitList(it)
         }
 
@@ -48,7 +48,13 @@ class SportFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        adapterLig = AllLigAdapter()
+        adapterLig = AllLigAdapter { item -> navigateItem(item) }
         binding.rvLig.adapter = adapterLig
+    }
+
+    private fun navigateItem(leagueId : Int){
+        val bundle = bundleOf()
+        bundle.putInt("leagueId", leagueId)
+        findNavController().navigate(R.id.action_sportFragment_to_sportLigaFragment, bundle)
     }
 }
