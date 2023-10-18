@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
+import com.example.h2bet.data.network.models.ligs.ValueItem
 import com.example.h2bet.databinding.FragmentSportBinding
 import com.example.h2bet.ui.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,7 +36,13 @@ class SportFragment : Fragment() {
 
         initAdapter()
         viewModel.allLigData.observe(viewLifecycleOwner){
-            adapterLig?.list?.submitList(it)
+            val dataUpd = mutableListOf<ValueItem>()
+            it?.forEachIndexed { index, valueItem ->
+                if(valueItem?.lE != null && valueItem.cI != 225 && valueItem.gC != null && valueItem.gC > 3){
+                    dataUpd.add(valueItem)
+                }
+            }
+            adapterLig?.list?.submitList(dataUpd)
         }
 
         viewModel.openSettings.observe(viewLifecycleOwner){
