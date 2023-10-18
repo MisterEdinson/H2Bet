@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_fiolet_radius"
+    android:layout_marginBottom="10dp"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imgTeam1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/liverpool" />
+
+    <ImageView
+        android:id="@+id/imgTeam2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgTeam1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgTeam1"
+        app:srcCompat="@drawable/liverpool" />
+
+    <TextView
+        android:id="@+id/tvTeam1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/montserrat_r"
+        android:text="Manchester United"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgTeam1"
+        app:layout_constraintEnd_toStartOf="@+id/tvTeam2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/imgTeam1"
+        app:layout_constraintTop_toTopOf="@+id/imgTeam1" />
+
+    <TextView
+        android:id="@+id/tvTeam2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="Manchester United"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat_r"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTeam1"
+        app:layout_constraintEnd_toStartOf="@+id/imgTeam2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvTeam1"
+        app:layout_constraintTop_toTopOf="@+id/tvTeam1" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#8747B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgTeam1">
+
+        <TextView
+            android:id="@+id/tvTotalWin1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_r"
+            android:gravity="center"
+            android:text="3.5"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#180D20" />
+
+        <TextView
+            android:id="@+id/tvTotalDraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_r"
+            android:gravity="center"
+            android:text="1.3"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#180D20" />
+
+        <TextView
+            android:id="@+id/tvTotalWin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_r"
+            android:gravity="center"
+            android:text="2.1"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

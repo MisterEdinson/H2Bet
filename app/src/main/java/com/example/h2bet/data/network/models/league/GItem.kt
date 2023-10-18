@@ -137,5 +137,7 @@ data class GItem(
 	val gVE: Int? = null,
 
 	@field:SerializedName("GSE")
-	val gSE: Boolean? = null
+	val gSE: Boolean? = null,
+
+	var visTime: Boolean = true
 )
