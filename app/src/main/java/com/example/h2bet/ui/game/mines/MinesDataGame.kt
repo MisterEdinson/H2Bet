@@ -4,7 +4,7 @@ class MinesDataGame {
     data class MinesModel(
         var id:Int,
         var select: Boolean,
-        var value: Float,
+        var value: Double,
         var type: Boolean
     )
 
