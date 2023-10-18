@@ -12,11 +12,15 @@ class RandomGame {
                 MinesDataGame.MinesModel(
                     i,
                     false,
-                    generateDouble(),
+                    rand(),
                     Random.nextBoolean()
                 )
             )
         }
+    }
+
+    private fun rand(): Double{
+        return (Random.nextInt(11, 31) / 10.0)
     }
 
     private fun generateDouble():Float{

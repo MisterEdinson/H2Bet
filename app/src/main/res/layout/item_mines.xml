@@ -8,7 +8,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgBgMines"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/item_game_mine" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvMinesCoef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1.3X"
@@ -26,9 +26,9 @@
         android:fontFamily="@font/montserrat_black"
         android:textSize="24sp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgBgMines"
+        app:layout_constraintEnd_toEndOf="@+id/imgBgMines"
+        app:layout_constraintStart_toStartOf="@+id/imgBgMines"
+        app:layout_constraintTop_toTopOf="@+id/imgBgMines" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
