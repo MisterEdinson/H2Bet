@@ -22,6 +22,7 @@ class MinesFragment : Fragment() {
     private var gameData = RandomGame()
     private lateinit var adapter: MinesAdapter
     private var totalWin = 250
+    private var stop = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,9 +35,11 @@ class MinesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
-        gameData.dataInit()
-        binding.tvScore.text = "Score: $totalWin"
-        adapter.list.submitList(gameData.randomData)
+        if(stop>0){
+            restartMines()
+        }else{
+            initGame()
+        }
 
         viewModel.openSettings.observe(viewLifecycleOwner){
             if (it) findNavController().navigate(R.id.action_minesFragment_to_settingsFragment)
@@ -46,6 +49,11 @@ class MinesFragment : Fragment() {
             btnReturn.setOnClickListener { findNavController().popBackStack() }
             btnAgain.setOnClickListener { restartMines() }
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        stop = 1
     }
 
     private fun initAdapter() {
@@ -60,7 +68,7 @@ class MinesFragment : Fragment() {
     }
 
     private fun gameOver(){
-        Toast.makeText(context, "Boom!!!", Toast.LENGTH_LONG).show()
+        //Toast.makeText(context, "Boom!!!", Toast.LENGTH_LONG).show()
         totalWin = (totalWin / 2)
         binding.tvScore.text = "Score: $totalWin"
         adapter.blockMines = true
@@ -73,5 +81,11 @@ class MinesFragment : Fragment() {
         adapter.list.submitList(gameData.randomData)
         adapter.blockMines = false
         adapter.notifyDataSetChanged()
+    }
+
+    private fun initGame(){
+        gameData.dataInit()
+        binding.tvScore.text = "Score: $totalWin"
+        adapter.list.submitList(gameData.randomData)
     }
 }
