@@ -14,7 +14,7 @@ data class ValueItem(
 	val sI: Int? = null,
 
 	@field:SerializedName("LE")
-	val lE: String? = null,
+	var lE: String? = null,
 
 	@field:SerializedName("SN")
 	val sN: String? = null,

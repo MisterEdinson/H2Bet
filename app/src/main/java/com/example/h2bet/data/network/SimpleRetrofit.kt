@@ -3,14 +3,15 @@ package com.example.h2bet.data.network
 import com.example.h2bet.data.network.models.league.LeagueChampionatGeneral
 import com.example.h2bet.data.network.models.ligs.GeneralItem
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface SimpleRetrofit {
-    @GET("GetChampsZip?sport=1")
+    @GET("dsadasdsavcvcxrew312fds")
     suspend fun getAllLig(): GeneralItem
 
-    @GET("GetChampZip")
+    @GET("dsadasdsavcvcxrew312fds/{id}")
     suspend fun selectLeague(
-        @Query("champ") champ: Int,
+        @Path("id") id: Int
     ): LeagueChampionatGeneral
 }

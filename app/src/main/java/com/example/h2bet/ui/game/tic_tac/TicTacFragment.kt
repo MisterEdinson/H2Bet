@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
 import com.example.h2bet.databinding.FragmentTicTacBinding
+import com.example.h2bet.ui.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.random.Random
 
@@ -16,6 +18,7 @@ import kotlin.random.Random
 class TicTacFragment : Fragment() {
 
     private lateinit var binding: FragmentTicTacBinding
+    private val viewModel: SharedViewModel by activityViewModels()
     private var dataUser = mutableListOf<TicTacGameModel>()
     private var blockGame = false
     override fun onCreateView(
@@ -41,6 +44,10 @@ class TicTacFragment : Fragment() {
 
             btnReturn.setOnClickListener { findNavController().popBackStack() }
             btnAgain.setOnClickListener { restartGame() }
+        }
+
+        viewModel.openSettings.observe(viewLifecycleOwner){
+            if (it) findNavController().navigate(R.id.action_ticTacFragment_to_settingsFragment)
         }
     }
 

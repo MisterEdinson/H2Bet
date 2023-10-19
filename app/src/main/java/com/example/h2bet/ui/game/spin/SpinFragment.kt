@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import com.example.h2bet.R
 import com.example.h2bet.databinding.FragmentSpinBinding
+import com.example.h2bet.ui.SharedViewModel
 import com.example.h2bet.utils.animate.Rotate
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.random.Random
@@ -19,6 +21,7 @@ class SpinFragment : Fragment() {
 
     private lateinit var binding: FragmentSpinBinding
     private var win : MutableLiveData<Int> = MutableLiveData(0)
+    private val viewModel: SharedViewModel by activityViewModels()
     private var blockBtnSpin: Boolean = false
     private var winResult: Float = 0.0F
     private var totalWin = 250
@@ -43,6 +46,10 @@ class SpinFragment : Fragment() {
                 if (!blockBtnSpin) startAnimation(imgFortune)
             }
             btnReturn.setOnClickListener { findNavController().popBackStack() }
+        }
+
+        viewModel.openSettings.observe(viewLifecycleOwner){
+            if (it) findNavController().navigate(R.id.action_spinFragment_to_settingsFragment)
         }
     }
 
